@@ -1287,7 +1287,7 @@
       <p class="hero-desc">Frontend Developer building responsive, scalable web and mobile apps with React.js,
         TypeScript &amp; React Native. I craft performant UIs that users love.</p>
       <div class="hero-cta">
-        <button class="btn-main">View my work <span class="arr"></span></button>
+        <button class="btn-main" id="view-work-btn">View my work <span class="arr"></span></button>
         <button class="btn-ghost">Download Resume</button>
       </div>
     </div>
@@ -1694,6 +1694,18 @@
   });
 
   // Contact button: open default mail client with prefilled message
+  // 'View my work' button: scroll to #work section
+  (function () {
+    const viewWorkBtn = document.getElementById('view-work-btn');
+    if (viewWorkBtn) {
+      viewWorkBtn.addEventListener('click', function () {
+        const workSection = document.getElementById('work');
+        if (workSection) {
+          workSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+  })();
   (function () {
     const contactBtn = document.querySelector('.contact-wrap .btn-main');
     if (!contactBtn) return;
