@@ -17,9 +17,9 @@
     --glass2: rgba(255, 255, 255, 0.06);
     --rim: rgba(255, 255, 255, 0.08);
     --rim2: rgba(255, 255, 255, 0.14);
-    --txt: #e8eaf0;
-    --muted: #4a5568;
-    --sub: #2d3748;
+    --txt: #ffffff;
+    --muted: #b3ffe2;
+    --sub: #ffe9b3;
     --lime: #c8ff57;
     --lime2: #a8e840;
     --violet: #7c3aed;
@@ -257,7 +257,7 @@
   }
 
   .hero-desc {
-    color: var(--muted);
+    color: var(--txt);
     font-size: 1rem;
     line-height: 1.8;
     max-width: 420px;
@@ -331,52 +331,65 @@
     padding: 4rem 0
   }
 
-  .orb-container {
+  .moon-container {
     width: 300px;
     height: 300px;
-    position: relative
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .orb-main {
+  .moon-main {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: conic-gradient(from 0deg, #7c3aed, #ec4899, #00d4ff, #c8ff57, #ff6b35, #7c3aed);
-    animation: spin 8s linear infinite;
-    opacity: .85
-  }
-
-  @keyframes spin {
-    to {
-      transform: rotate(360deg)
-    }
-  }
-
-  .orb-inner {
+    background: radial-gradient(circle at 60% 40%, #fffde4 70%, #e0e7ff 100%, #b3ffe2 120%);
+    box-shadow: 0 0 60px 10px #e0e7ff, 0 0 120px 30px #b3ffe2;
     position: absolute;
-    inset: 6px;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .moon-shadow {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 38%;
+    top: 10%;
+    background: radial-gradient(circle at 0% 50%, rgba(2, 3, 10, 0.85) 60%, transparent 100%);
     border-radius: 50%;
-    background: var(--void);
+    z-index: 2;
+    filter: blur(2px);
+  }
+
+  .moon-inner {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    z-index: 3;
   }
 
-  .orb-text {
+  .moon-text {
     font-family: var(--ff-m);
     font-size: .7rem;
     color: var(--muted);
     text-align: center;
-    line-height: 1.7
+    line-height: 1.7;
+    z-index: 4;
   }
 
-  .orb-text strong {
+  .moon-text strong {
     display: block;
     font-family: var(--ff-d);
     font-size: 1.8rem;
     color: var(--txt);
     letter-spacing: .04em;
-    margin-bottom: .2rem
+    margin-bottom: .2rem;
   }
 
   .fb {
@@ -567,7 +580,7 @@
 
   .bento-desc {
     font-size: .8rem;
-    color: var(--muted);
+    color: var(--txt);
     line-height: 1.6;
     font-weight: 300
   }
@@ -780,7 +793,7 @@
 
   .pdesc {
     font-size: .875rem;
-    color: var(--muted);
+    color: var(--txt);
     line-height: 1.65;
     margin-bottom: 1.25rem;
     font-weight: 300
@@ -886,13 +899,13 @@
     font-weight: 700;
     font-size: .9rem;
     margin-bottom: .25rem;
-    color: var(--muted);
+    color: var(--txt);
     transition: color .2s
   }
 
   .enc {
     font-size: .8rem;
-    color: var(--sub)
+    color: var(--txt)
   }
 
   .exp-detail {
@@ -928,14 +941,14 @@
 
   .edco {
     font-size: .9375rem;
-    color: var(--muted);
+    color: var(--txt);
     margin-bottom: 1.5rem;
     font-weight: 300
   }
 
   .eddesc {
     font-size: .9rem;
-    color: var(--muted);
+    color: var(--txt);
     line-height: 1.8;
     margin-bottom: 1.5rem;
     font-weight: 300
@@ -963,7 +976,7 @@
 
   .wl {
     font-size: .8rem;
-    color: var(--muted);
+    color: var(--txt);
     margin-top: .25rem;
     font-weight: 300
   }
@@ -978,7 +991,7 @@
 
   .bullets li {
     font-size: .875rem;
-    color: var(--muted);
+    color: var(--txt);
     line-height: 1.65;
     padding-left: 1.25rem;
     position: relative;
@@ -1028,7 +1041,8 @@
     font-weight: 600;
     font-size: .9375rem;
     margin-bottom: .375rem;
-    line-height: 1.4
+    line-height: 1.4;
+    color: var(--txt);
   }
 
   .cert-date {
@@ -1070,7 +1084,7 @@
   }
 
   .csub {
-    color: var(--muted);
+    color: var(--txt);
     font-size: 1rem;
     max-width: 440px;
     margin: 0 auto 2.5rem;
@@ -1092,7 +1106,7 @@
     gap: .625rem;
     font-family: var(--ff-m);
     font-size: .75rem;
-    color: var(--muted);
+    color: var(--txt);
     padding: .625rem 1.25rem;
     background: rgba(255, 255, 255, .04);
     border: 1px solid var(--rim);
@@ -1121,7 +1135,7 @@
     background: rgba(255, 255, 255, .04);
     border: 1px solid var(--rim);
     border-radius: 10px;
-    color: var(--muted);
+    color: var(--txt);
     text-decoration: none;
     font-family: var(--ff-m);
     font-size: .72rem;
@@ -1252,7 +1266,7 @@
   .fcopy {
     font-family: var(--ff-m);
     font-size: .68rem;
-    color: var(--sub)
+    color: var(--txt)
   }
 </style>
 
@@ -1293,10 +1307,11 @@
       </div>
     </div>
     <div class="hero-right">
-      <div class="orb-container">
-        <div class="orb-main"></div>
-        <div class="orb-inner">
-          <div class="orb-text"><strong>2+</strong>years of<br>craft</div>
+      <div class="moon-container">
+        <div class="moon-main"></div>
+        <div class="moon-shadow"></div>
+        <div class="moon-inner">
+          <div class="moon-text"><strong>2+</strong>years of<br>craft</div>
         </div>
       </div>
       <div class="fb fb1">React</div>
