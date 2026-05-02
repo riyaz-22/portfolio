@@ -1,13 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7c3aed"/>
-      <stop offset="33%" stop-color="#ec4899"/>
-      <stop offset="66%" stop-color="#00d4ff"/>
-      <stop offset="100%" stop-color="#c8ff57"/>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
     </linearGradient>
   </defs>
-  <circle cx="32" cy="32" r="30" fill="url(#g1)"/>
-  <text x="50%" y="54%" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="32" fill="#fff" dy=".3em">RA</text>
-  <circle cx="54" cy="16" r="6" fill="#c8ff57" stroke="#fff" stroke-width="2"/>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="14" fill="#0F172A"/>
+
+  <!-- Monogram R -->
+  <path d="M20 46V18H34C40 18 44 21.5 44 26.5C44 30.5 41.5 33 38 34L44 46H37L32 36H26V46H20ZM26 31H33C36 31 38 29.5 38 27C38 24.5 36 23 33 23H26V31Z" fill="url(#g)"/>
 </svg>
